@@ -51,8 +51,9 @@ keymap("n", "<Cr>", "o<Esc>k", opts)
 
 
 -- Insert -- 
--- Press jj to exit insert mode 
-keymap("i", "jj", "<Esc>", opts)
+-- Press jk to exit insert mode 
+keymap("i", "jk", "<Esc>", opts)
+keymap("i", "kj", "<Esc>", opts)
 
 
 -- Visual --
