@@ -11,7 +11,8 @@ end
 -- Config -- 
 -- tokyonight  
 require("tokyonight").setup({
-    style = "night", -- "storm", "moon", "night", "day"
+    -- "storm", "moon", "night", "day"
+    style = "night",     
     styles = {
         comments = { italic = true },
     }
@@ -22,14 +23,13 @@ require("gruvbox").setup({
 })
 
 -- sonokai
-vim.g.sonokai_style = "shusia" -- "default", "atlantis", "andromeda", "shusia", "maia", "expresso"
+-- "default", "atlantis", "andromeda", "shusia", "maia", "expresso"
+vim.g.sonokai_style = "shusia" 
 
 -- vscode 
 require("vscode").setup({
     italic_comments = true,
 })
-
-
 
 -- Put this at the end after all plugins --
 vim.cmd("colorscheme " .. colorscheme)
