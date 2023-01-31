@@ -40,7 +40,7 @@ local options = {
 
     -- appearance --
     showtabline = 2,            -- always show tabs
-    -- cursorline = true,
+    cursorline = true,
     cmdheight = 2,  
     pumheight = 10,             -- pop up menu heaght
     showmode = false,           -- with powerline, we don't need to show things like -- INSERT -- anymore
