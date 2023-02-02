@@ -14,11 +14,6 @@ require("luasnip/loaders/from_vscode").lazy_load()
 
 vim.opt.completeopt = { "menu", "menuone", "noselect" }
         
-local check_backspace = function()
-    local col = vim.fn.col "." - 1
-    return col == 0 or vim.fn.getline("."):sub(col, col):match "%s"
-end
-
 local has_words_before = function()
     unpack = unpack or table.unpack
     local line, col = unpack(vim.api.nvim_win_get_cursor(0))
@@ -54,6 +49,15 @@ local kind_icons = {
     TypeParameter = "",
 }
     
+local border_style = {
+    ["none"] = {},
+    ["default"] = {"┌", "─", "┐", "│", "┘", "─", "└", "│"},
+    ["bold"] = {"┏", "━", "┓", "┃", "┛", "━", "┗", "┃"},
+    ["double"] = {"╔", "═" ,"╗", "║", "╝", "═", "╚", "║" },
+    ["round"] = {"╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+}
+
+-- Setup
 cmp.setup {
   snippet = {
     expand = function(args)
@@ -129,8 +133,13 @@ cmp.setup {
   },
 
   window = {
+    completion = {
+        border = border_style["round"],
+        scrollbar = false,
+    },
     documentation = {
-      border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+      border = border_style["round"],
+      scrollbar = true,
     },
   },
 
@@ -138,6 +147,5 @@ cmp.setup {
     ghost_text = true,
     native_menu = false,
   },
-
 }
 
