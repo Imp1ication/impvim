@@ -5,7 +5,6 @@ local options = {
     mouse = "ic",               -- enabled mouse in Insert mode and Command-line mode
     timeoutlen = 300,
     updatetime = 300,
-    completeopt = { "menuone", "noselect" },    -- auto cmp but don't select 
     conceallevel = 0,           -- make `` visible in markdown files
 
     -- backup --

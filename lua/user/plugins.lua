@@ -54,6 +54,23 @@ return packer.startup(function(use)
     use "sainnhe/sonokai"
     use "Mofiqul/vscode.nvim"
 
+    -- Completion
+    use "hrsh7th/nvim-cmp"   
+    use "hrsh7th/cmp-buffer"
+    use "hrsh7th/cmp-path"
+    use "hrsh7th/cmp-cmdline"
+
+    -- Snippets
+    use "saadparwaiz1/cmp_luasnip"
+    use "L3MON4D3/LuaSnip"
+    use "rafamadriz/friendly-snippets"
+
+--[[
+    -- LSP
+    use "williamboman/mason.nvim"
+    use "williamboman/mason-lspconfig.nvim"
+    use "neovim/nvim-lspconfig"
+--]]
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
     if PACKER_BOOTSTRAP then
