@@ -17,7 +17,7 @@ local options = {
     relativenumber = true,
     numberwidth = 4,            -- set number column width to 4 
     signcolumn = "yes",
-    
+
     -- tab and indentation --
     tabstop = 4,
     softtabstop = 4,
@@ -25,7 +25,7 @@ local options = {
     expandtab = true,           -- expand tab to spaces
     autoindent = true,          -- copy indent from current line when starting a new line 
     smartindent = true,         -- make above smarter
-    
+
     -- wrap and scrolloff
     wrap = false,               -- disable line wrapping
     scrolloff = 4,              -- minimal number of screen lines to keep above and below the cursor
@@ -40,7 +40,7 @@ local options = {
     -- appearance --
     showtabline = 2,            -- always show tabs
     cursorline = true,
-    cmdheight = 2,  
+    cmdheight = 2,
     pumheight = 10,             -- pop up menu heaght
     showmode = false,           -- with powerline, we don't need to show things like -- INSERT -- anymore
     splitbelow = true,          -- split horizontal widow to the below
