@@ -82,13 +82,13 @@ cmp.setup {
         end, { "i", "s" }),
     },
 
-    --[[
+--[[
     formatting = {
         format = lspkind.cmp_format({
             -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
             maxwidth = 30,
             ellipsis_char = "...",
-            mode = "", -- "text", "test_symbol", "symbol_text", "symbol"
+            mode = "symbol_text", -- "text", "test_symbol", "symbol_text", "symbol"
             menu = ({
                 nvim_lsp = "(lsp)",
                 luasnip = "(snippet)",
@@ -131,7 +131,6 @@ cmp.setup {
             } --   פּ ﯟ    some other good icons
 
             vim_item.kind = string.format("%s %s", kind_icons[vim_item.kind], vim_item.kind)
-            -- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
 
             -- abbr
             local abbr_opt = {
@@ -141,7 +140,7 @@ cmp.setup {
 
             if abbr_opt.maxwidth ~= nil then
                 if abbr_opt.ellipsis_char == nil then
-                    vim_item.abbr=string.sub(vim_item.abbr, 1, abbr_opt.maxwidth)
+                    vim_item.abbr = string.sub(vim_item.abbr, 1, abbr_opt.maxwidth)
                 else
                     local label = vim_item.abbr
                     local truncated_label = vim.fn.strcharpart(label, 0, abbr_opt.maxwidth)

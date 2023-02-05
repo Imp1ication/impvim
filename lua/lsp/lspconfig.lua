@@ -51,20 +51,20 @@ local keymap = vim.keymap
 local on_attach = function(client, bufnr)
     local opts = { noremap = true, silent = true, buffer = bufnr }
     -- set keybinds
-    keymap.set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts) -- go to implementation
-    keymap.set("n", "gD", "<cmd>lua vim.lsp.buf.declearation()<CR>", opts) -- got to declaration
-    keymap.set("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts) -- show documentation for what is under cursor
-    keymap.set("n", "<leader>fm", "<cmd>lua vim.lsp.buf.format{ async = ture }<CR>", opts) -- show documentation for what is under cursor
+    keymap.set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
+    keymap.set("n", "gD", "<cmd>lua vim.lsp.buf.declearation()<CR>", opts)
+    keymap.set("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
+    keymap.set("n", "<leader>fm", "<cmd>lua vim.lsp.buf.format{ async = ture }<CR>", opts)
 
-    keymap.set("n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", opts) -- show diagnostics for cursor
-    keymap.set("n", "<leader>gk", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opts) -- jump to previous diagnostic in buffer
-    keymap.set("n", "<leader>gj", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts) -- jump to next diagnostic in buffer
-    keymap.set("n", "<leader>gs", "<cmd>Lspsaga show_buf_diagnostics<CR>", opts) -- see available code actions
+    keymap.set("n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
+    keymap.set("n", "<leader>gk", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opts)
+    keymap.set("n", "<leader>gj", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
+    keymap.set("n", "<leader>gs", "<cmd>Lspsaga show_buf_diagnostics<CR>", opts)
 
-    keymap.set("n", "gf", "<cmd>Lspsaga lsp_finder<CR>", opts) -- show definition, references
-    keymap.set("n", "gd", "<cmd>Lspsaga peek_definition<CR>", opts) -- see definition and make edits in window
-    keymap.set("n", "ga", "<cmd>Lspsaga code_action<CR>", opts) -- see available code actins
-    keymap.set("n", "<leader>rn", "<cmd>Lspsaga rename<CR>", opts) -- see available code actions
+    keymap.set("n", "gf", "<cmd>Lspsaga lsp_finder<CR>", opts)
+    keymap.set("n", "gd", "<cmd>Lspsaga peek_definition<CR>", opts)
+    keymap.set("n", "ga", "<cmd>Lspsaga code_action<CR>", opts)
+    keymap.set("n", "<leader>rn", "<cmd>Lspsaga rename<CR>", opts)
 
     -- specific server keymaps
     --[[

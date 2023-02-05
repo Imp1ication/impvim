@@ -68,3 +68,4 @@ keymap("v", "p", "\"_dP", opts)
 keymap("v", "J", ":m '>+1<Cr>gv=gv", opts)
 keymap("v", "K", ":m '<-2<Cr>gv=gv", opts)
 
+keymap("n", "<leader>e", ":Lexplor 20<Cr>", opts)
