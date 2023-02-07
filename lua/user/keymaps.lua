@@ -2,7 +2,6 @@
 local keymap = vim.api.nvim_set_keymap
 
 local opts = { noremap = true, silent = true }
-local term_opts = { silent = true }
 
 -- Remap <Space> as leader key --
 keymap("", "<Space>", "<Nop>", opts)
@@ -13,6 +12,8 @@ vim.g.maplocalleader = " "
 -- Page up and down
 keymap("n", "<C-u>", "15kzz", opts)
 keymap("n", "<C-d>", "15jzz", opts)
+keymap("n", "gg", "ggzzzv", opts)
+keymap("n", "G", "Gzzzv", opts)
 
 -- Keep cursor at the middle after search jumping
 keymap("n", "n", "nzzzv", opts)

@@ -2,7 +2,7 @@ require("user.options")
 require("user.keymaps")
 require("user.plugins")
 require("user.treesitter")
-require("user.autopair")
+require("user.autopairs")
 
 require("theme.colorscheme")
 
