@@ -10,7 +10,7 @@ if not cmp_nvim_lsp_status_ok then
     return
 end
 
--- Signs --
+-- Diagnostic --
 local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
 for type, icon in pairs(signs) do
     local hl = "DiagnosticSign" .. type
@@ -18,7 +18,6 @@ for type, icon in pairs(signs) do
 end
 
 local config = {
-
     virtual_text = false, -- disable virtual text
     signs = {
         active = signs, -- show signs
@@ -37,13 +36,6 @@ local config = {
 }
 
 vim.diagnostic.config(config)
-vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-    border = "rounded",
-})
-
-vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
-    border = "rounded",
-})
 
 -- Keybinds for available lsp server --
 local keymap = vim.keymap
@@ -53,16 +45,16 @@ local on_attach = function(client, bufnr)
     -- set keybinds
     keymap.set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
     keymap.set("n", "gD", "<cmd>lua vim.lsp.buf.declearation()<CR>", opts)
-    keymap.set("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
     keymap.set("n", "<leader>fm", "<cmd>lua vim.lsp.buf.format{ async = ture }<CR>", opts)
 
     keymap.set("n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
-    keymap.set("n", "<leader>gk", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opts)
-    keymap.set("n", "<leader>gj", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
-    keymap.set("n", "<leader>gs", "<cmd>Lspsaga show_buf_diagnostics<CR>", opts)
+    keymap.set("n", "<leader>gk", "<cmd>lua vim.diagnostic.goto_prev()<CR>zz", opts)
+    keymap.set("n", "<leader>gj", "<cmd>lua vim.diagnostic.goto_next()<CR>zz", opts)
+    keymap.set("n", "gs", "<cmd>Lspsaga show_buf_diagnostics<CR>", opts)
 
     keymap.set("n", "gf", "<cmd>Lspsaga lsp_finder<CR>", opts)
     keymap.set("n", "gd", "<cmd>Lspsaga peek_definition<CR>", opts)
+    keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts)
     keymap.set("n", "ga", "<cmd>Lspsaga code_action<CR>", opts)
     keymap.set("n", "<leader>rn", "<cmd>Lspsaga rename<CR>", opts)
 
@@ -72,6 +64,7 @@ local on_attach = function(client, bufnr)
     end
     --]]
 end
+
 -- Used to enable autocompletion --
 local capabilities = cmp_nvim_lsp.default_capabilities()
 
@@ -102,7 +95,6 @@ lspconfig["clangd"].setup({
     capabilities = capabilities,
     on_attach = on_attach,
 })
-
 --[[
 lspconfig["gopls"].setup({
     capabilities = capabilities,
@@ -117,5 +109,6 @@ lspconfig["graphql"].setup({
 lspconfig["jdtls"].setup({
     capabilities = capabilities,
     on_attach = on_attach,
-})
+
 --]]
+

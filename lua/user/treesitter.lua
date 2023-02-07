@@ -10,6 +10,8 @@ treesitter.setup({
         "json",
         "python",
         "markdown", "markdown_inline",
+
+        "cmake"
     },
 
     ignore_install = {},

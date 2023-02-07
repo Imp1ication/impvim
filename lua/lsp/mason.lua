@@ -45,7 +45,7 @@ require("mason").setup({
             cancel_installation = "<C-c>",
             apply_language_filter = "<C-f>",
         },
-    }, 
+    },
 })
 require("mason-lspconfig").setup({
     -- list of servers for mason to install 

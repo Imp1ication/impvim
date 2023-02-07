@@ -8,18 +8,21 @@ end
 saga.setup({
     -- lsp finder setup 
     finder = {
-        -- jump_to = "g",
-        edit = { "<CR>", "<C-c>o" },
-        vsplit = "<C-c>v",
-        split = "<C-c>s",
-        tabe = "<C-c>t",
-        quit = { "<ESC>", "q" },
-        close_in_preview = "<ESC>"
+        max_height = 0.5,
+
+        keys = {
+            edit = { "<CR>", "e" },
+            vsplit = "v",
+            split = "s",
+            tabe = "t",
+            quit = { "<ESC>", "q" },
+            close_in_preview = "<ESC>"
+        },
     },
 
     -- peek definition setup
     definition = {
-        edit = "<C-c>o",
+        edit = "<Cr>",
         vsplit = "<C-c>v",
         split = "<C-c>s",
         tabe = "<C-c>t",
@@ -29,6 +32,7 @@ saga.setup({
 
     code_action = {
         num_shortcut = true,
+        show_server_name = false,
         keys = {
             quit = "q",
             exec = "<CR>",
@@ -42,8 +46,9 @@ saga.setup({
         sign_priority = 40,
         virtual_text = false,
     },
+
     diagnostic = {
-        show_code_action = false,
+        show_code_action = true,
         show_source = true,
         jump_num_shortcut = true,
         --1 is max
