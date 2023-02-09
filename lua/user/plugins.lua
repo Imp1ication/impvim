@@ -54,6 +54,8 @@ return packer.startup(function(use)
     use "sainnhe/sonokai"
     use "Mofiqul/vscode.nvim"
 
+    use "kyazdani42/nvim-web-devicons"
+
     -- Completion
     use "hrsh7th/nvim-cmp"
     use "hrsh7th/cmp-buffer"
@@ -71,10 +73,7 @@ return packer.startup(function(use)
     use "williamboman/mason.nvim"
     use "williamboman/mason-lspconfig.nvim"
     use "neovim/nvim-lspconfig"
-    use {
-        "glepnir/lspsaga.nvim",
-        branch = "main",
-    }
+    use { "glepnir/lspsaga.nvim", branch = "main" }
 
     use "hrsh7th/cmp-nvim-lsp"
 
@@ -88,7 +87,17 @@ return packer.startup(function(use)
     }
     use "p00f/nvim-ts-rainbow"
     use "windwp/nvim-autopairs"
-    use {"windwp/nvim-ts-autotag",after = "nvim-treesitter" }
+    use { "windwp/nvim-ts-autotag", after = "nvim-treesitter" }
+
+    -- Null-ls
+    use "jose-elias-alvarez/null-ls.nvim"
+    use "jay-babu/mason-null-ls.nvim"
+
+    -- Telescope
+    use {
+        "nvim-telescope/telescope.nvim", branch = "0.1.x",
+        requires = {"nvim-lua/plenary.nvim"},
+    }
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins

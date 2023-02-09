@@ -1,17 +1,23 @@
-local mason_status_ok, _ = pcall(require, "mason")
+local mason_status_ok, mason = pcall(require, "mason")
 if not mason_status_ok then
     vim.notify("Error from mason!")
     return
 end
 
-local mason_lspconfig_status_ok, _ = pcall(require, "mason-lspconfig")
+local mason_lspconfig_status_ok, mason_lspconfig = pcall(require, "mason-lspconfig")
 if not mason_lspconfig_status_ok then
     vim.notify("Error from mason-lspconfig!")
     return
 end
 
--- Setup mason and mason-lspconfig -- 
-require("mason").setup({
+local mason_null_ls_status_ok, mason_null_ls = pcall(require, "mason-null-ls")
+if not mason_null_ls_status_ok then
+    vim.notify("Error from mason-null-ls!")
+    return
+end
+
+-- Setup mason and mason-lspconfig --
+mason.setup({
     ui = {
         -- Whether to automatically check for new versions when opening the :Mason window.
         check_outdated_packages_on_open = true,
@@ -47,16 +53,25 @@ require("mason").setup({
         },
     },
 })
-require("mason-lspconfig").setup({
-    -- list of servers for mason to install 
+
+mason_lspconfig.setup({
+    -- list of servers for mason to install
     ensure_installed = {
         "sumneko_lua",
         "jsonls",
         "clangd",
     },
-
     automatic_installation = true, -- auto-install configured servers with lspconfig
 })
 
+mason_null_ls.setup({
+    ensure_installed = {
+        "stylua",
+        "prettier",
+        "eslint_d",
+    },
+    automatic_installation = true,
+    automatic_setup = true,
+})
 
-
+mason_null_ls.setup_handlers() -- if `automatic_setup` is true.

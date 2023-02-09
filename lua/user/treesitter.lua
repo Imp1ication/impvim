@@ -1,6 +1,6 @@
 local status_ok, treesitter = pcall(require, "nvim-treesitter.configs")
-
 if not status_ok then
+    vim.notify("Error form treesitter!")
     return
 end
 
@@ -27,12 +27,20 @@ treesitter.setup({
 
     indent = { enable = true, disable = {} },
 
+    incremental_selection = {
+        enable = true,
+        keymaps = {
+            node_incremental = "<cr>",
+            node_decremental = "<bs>",
+            scope_incremental = "<tab>",
+        }
+    },
     -- nvim-ts-rainbow
     rainbow = {
         enable = true,
         disable = {},
-        extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
-        max_file_lines = nil, -- Do not enable for files with more than n lines, int
+        extended_mode = true, -- also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
+        max_file_lines = nil, -- do not enable for files with more than n lines, int
         -- colors = {}, -- table of hex strings
         -- termcolors = {} -- table of colour name strings
     },
