@@ -1,6 +1,6 @@
 local status_ok, telescope = pcall(require, "telescope")
 if not status_ok then
-    vim.notify("Error from telescope!")
+	vim.notify("Error from telescope!")
 	return
 end
 
@@ -12,7 +12,7 @@ telescope.setup({
 		prompt_prefix = " ",
 		selection_caret = " ",
 		path_display = { "smart" },
-        layout_strategy = "horizontal", -- "horizontal", "vertical", "center", "cursor"
+		layout_strategy = "horizontal", -- "horizontal", "vertical", "center", "cursor"
 
 		mappings = {
 			i = {
@@ -80,18 +80,16 @@ telescope.setup({
 			},
 		},
 	},
-
 	pickers = {
 		find_files = {
-            theme = "dropdown", -- "dropdown", "cursor", "ivy"
-            previewer = false,
+			theme = "dropdown", -- "dropdown", "cursor", "ivy"
+			previewer = false,
 		},
 
-        oldfiles = {
-            previewer = false,
-        },
+		oldfiles = {
+			previewer = false,
+		},
 	},
-
 	extensions = {
 		-- Your extension configuration goes here:
 		-- extension_name = {
