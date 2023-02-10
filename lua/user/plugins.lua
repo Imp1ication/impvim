@@ -16,6 +16,7 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 
 -- Autocommand that reloads neovim whenever you save the plugins.lua file
+
 vim.cmd [[
   augroup packer_user_config
     autocmd!
@@ -89,9 +90,19 @@ return packer.startup(function(use)
     use "windwp/nvim-autopairs"
     use { "windwp/nvim-ts-autotag", after = "nvim-treesitter" }
 
+    -- Comments
+    use "numToStr/Comment.nvim"
+
+
     -- Null-ls
     use "jose-elias-alvarez/null-ls.nvim"
     use "jay-babu/mason-null-ls.nvim"
+
+    -- NvimTree
+
+    -- Buffer line
+
+    -- Lualine
 
     -- Telescope
     use {

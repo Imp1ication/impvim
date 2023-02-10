@@ -53,4 +53,7 @@ for k, v in pairs(options) do
 end
 
 vim.opt.iskeyword:append "-"    -- consider string-string as whole word
+vim.cmd("autocmd BufEnter * set formatoptions-=cro")
+
+vim.g.python3_host_prog = "/bin/python3"
 vim.g.ruby_host_prog = "/usr/local/bin/neovim-ruby-host"

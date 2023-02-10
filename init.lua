@@ -3,6 +3,7 @@ require("user.keymaps")
 require("user.plugins")
 require("user.treesitter")
 require("user.autopairs")
+require("user.comment")
 require("user.telescope")
 
 require("theme.colorscheme")
