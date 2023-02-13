@@ -67,7 +67,8 @@ keymap("v", "p", "\"_dP", opts)
 keymap("v", "J", ":m '>+1<Cr>gv=gv", opts)
 keymap("v", "K", ":m '<-2<Cr>gv=gv", opts)
 
-keymap("n", "<leader>e", ":Lexplor 20<Cr>", opts)
+-- Nvim Tree --
+keymap("n", "<leader>e", ":NvimTreeToggle<Cr>", opts)
 
 -- Telescope --
 keymap("n", "<leader>ff", ":Telescope find_files<Cr>", opts)
@@ -75,4 +76,3 @@ keymap("n", "<leader>fo", ":Telescope oldfiles<Cr>", opts)
 keymap("n", "<leader>fg", ":Telescope live_grep<Cr>", opts)
 keymap("n", "<leader>fs", ":Telescope grep_string<Cr>", opts)
 keymap("n", "<leader>fb", ":Telescope buffers<Cr>", opts)
-

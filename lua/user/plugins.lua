@@ -55,7 +55,6 @@ return packer.startup(function(use)
     use "sainnhe/sonokai"
     use "Mofiqul/vscode.nvim"
 
-    use "kyazdani42/nvim-web-devicons"
 
     -- Completion
     use "hrsh7th/nvim-cmp"
@@ -93,12 +92,16 @@ return packer.startup(function(use)
     -- Comments
     use "numToStr/Comment.nvim"
 
-
     -- Null-ls
     use "jose-elias-alvarez/null-ls.nvim"
     use "jay-babu/mason-null-ls.nvim"
 
     -- NvimTree
+    -- use "kyazdani42/nvim-web-devicons"
+    use {
+        "nvim-tree/nvim-tree.lua",
+        requires = { "nvim-tree/nvim-web-devicons", }
+    }
 
     -- Buffer line
 
