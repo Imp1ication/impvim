@@ -12,15 +12,15 @@ bufferline.setup({
 		max_name_length = 20,
 		numbers = "none", -- "none", "ordinal", "buffer_id", "both", function({ ordinal, id, lower, raise }): string
 
-        always_show_bufferline = true,
-        separator_style = "slant", -- "slant", "thick", "thin"
+		always_show_bufferline = true,
+		separator_style = "slant", -- "slant", "thick", "thin", {"|", "|"}
 
-        color_icons = true,
-        show_buffer_icons = true,
-        show_buffer_close_icons = true,
+		color_icons = true,
+		show_buffer_icons = true,
+		show_buffer_close_icons = true,
 
 		indicator = {
-			style = "icon", -- "icon", "underline", "none"
+			style = "none", -- "icon", "underline", "none"
 			icon = "▎", -- this should be omitted if indicator style is not "icon"
 		},
 
@@ -34,13 +34,16 @@ bufferline.setup({
 		diagnostics = "nvim_lsp", -- false, "nvim_lsp", "coc"
 		diagnostics_update_in_insert = true,
 		diagnostics_indicator = function(_, _, diagnostics_dict, _)
-            local key = "none"
-            for i, _ in pairs(diagnostics_dict) do
-                if i == "error" then key = "error"
-                elseif key ~= "error" and i == "warning" then key = "warning"
-                elseif key == "none" then key = i
-                end
-            end
+			local key = "none"
+			for i, _ in pairs(diagnostics_dict) do
+				if i == "error" then
+					key = "error"
+				elseif key ~= "error" and i == "warning" then
+					key = "warning"
+				elseif key == "none" then
+					key = i
+				end
+			end
 
 			local icon = (key == "error" and " " or (key == "warning" and " " or "󰠠 "))
 			return "" .. icon .. diagnostics_dict[key]
