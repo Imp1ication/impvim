@@ -8,20 +8,27 @@ end
 
 bufferline.setup({
 	options = {
+		tab_size = 20,
+		max_name_length = 20,
 		numbers = "none", -- "none", "ordinal", "buffer_id", "both", function({ ordinal, id, lower, raise }): string
-		-- Mouse actions
-		close_command = "Bdelete! %d",
-		right_mouse_command = "Bdelete! %d",
-		left_mouse_command = "buffer %d",
-		middle_mouse_command = nil,
+
+        always_show_bufferline = true,
+        separator_style = "slant", -- "slant", "thick", "thin"
+
+        color_icons = true,
+        show_buffer_icons = true,
+        show_buffer_close_icons = true,
 
 		indicator = {
 			style = "icon", -- "icon", "underline", "none"
 			icon = "▎", -- this should be omitted if indicator style is not "icon"
 		},
 
-		max_name_length = 20,
-		tab_size = 20,
+		-- Mouse actions
+		close_command = "Bdelete! %d",
+		right_mouse_command = "Bdelete! %d",
+		left_mouse_command = "buffer %d",
+		middle_mouse_command = nil,
 
 		-- Diagnostics
 		diagnostics = "nvim_lsp", -- false, "nvim_lsp", "coc"
@@ -49,12 +56,5 @@ bufferline.setup({
 				highlight = "Directory",
 			},
 		},
-
-		color_icons = true,
-		show_buffer_icons = true,
-		show_buffer_close_icons = true,
-		persist_buffer_sort = true,
-		always_show_bufferline = true,
-		separator_style = "slant", -- "slant", "thick", "thin"
 	},
 })
