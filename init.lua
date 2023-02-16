@@ -3,10 +3,11 @@ require("user.keymaps")
 require("user.plugins")
 require("user.treesitter")
 require("user.autopairs")
-require("user.nvim-tree")
 require("user.telescope")
 
-require("theme.colorscheme")
+require("view.colorscheme")
+require("view.nvim-tree")
+require("view.bufferline")
 
 require("lsp.cmp")
 require("lsp.mason")

@@ -10,7 +10,7 @@ end
 
 local tree_cb = nvim_tree_config.nvim_tree_callback
 
--- disable netrw at the very start of your init.lua (strongly advised)
+-- Disable netrw at the very start of your init.lua (strongly advised)
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
@@ -19,14 +19,14 @@ nvim_tree.setup({
 
 	view = {
 		side = "left", -- "left", "right"
-		hide_root_folder = false,
+		hide_root_folder = true,
 		cursorline = true,
 		signcolumn = "yes", -- "yes", "auto", "no"
 
 		adaptive_size = true,
 		width = {
 			min = 20,
-			max = 40,
+			max = 35,
 		},
 
 		mappings = {
@@ -40,7 +40,6 @@ nvim_tree.setup({
 	},
 
 	renderer = {
-	--	root_folder_modifier = ":t",
 		group_empty = true,
 		full_name = true,
 
@@ -49,7 +48,7 @@ nvim_tree.setup({
 		indent_width = 2,
 		indent_markers = {
 			enable = true,
-			inline_arrows = true,
+			inline_arrows = false,
 		},
 
 		icons = {
@@ -93,7 +92,6 @@ nvim_tree.setup({
         exclude = {
             "git.ignore"
         },
-
     },
 
     actions = {

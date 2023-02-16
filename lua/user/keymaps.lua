@@ -43,10 +43,6 @@ keymap("n", "<C-Down>", ":resize +2<Cr>", opts)
 keymap("n", "<C-Left>", ":vertical resize -2<Cr>", opts)
 keymap("n", "<C- Right>", ":vertical resize -2<Cr>", opts)
 
--- Navigate buffers
-keymap("n", "<S-l>", ":bnext<Cr>", opts)
-keymap("n", "<S-h>", ":bprevious<Cr>", opts)
-
 -- Add empty line without get into Insert mode 
 keymap("n", "<Cr>", "o<Esc>k", opts)
 
@@ -67,8 +63,16 @@ keymap("v", "p", "\"_dP", opts)
 keymap("v", "J", ":m '>+1<Cr>gv=gv", opts)
 keymap("v", "K", ":m '<-2<Cr>gv=gv", opts)
 
--- Nvim Tree --
+-- NvimTree --
 keymap("n", "<leader>e", ":NvimTreeToggle<Cr>", opts)
+
+-- Buffer Line
+keymap("n", "<leader>b", ":BufferLinePick<Cr>", opts)
+keymap("n", "<S-h>", ":BufferLineCyclePrev<Cr>", opts)
+keymap("n", "<S-l>", ":BufferLineCycleNext<Cr>", opts)
+keymap("n", "<leader>bh", ":BufferLineMovePrev<Cr>", opts)
+keymap("n", "<leader>bl", ":BufferLineMoveNext<Cr>", opts)
+keymap("n", "<leader>bd", ":Bd<Cr>", opts)
 
 -- Telescope --
 keymap("n", "<leader>ff", ":Telescope find_files<Cr>", opts)

@@ -40,7 +40,7 @@ vim.diagnostic.config(config)
 -- Keybinds for available lsp server --
 local keymap = vim.keymap
 
-local on_attach = function(client, bufnr)
+local on_attach = function(_, bufnr)
     local opts = { noremap = true, silent = true, buffer = bufnr }
     -- set keybinds
     keymap.set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)

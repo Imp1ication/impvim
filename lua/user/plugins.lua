@@ -97,13 +97,18 @@ return packer.startup(function(use)
     use "jay-babu/mason-null-ls.nvim"
 
     -- NvimTree
-    -- use "kyazdani42/nvim-web-devicons"
     use {
         "nvim-tree/nvim-tree.lua",
         requires = { "nvim-tree/nvim-web-devicons", }
     }
 
     -- Buffer line
+    use {
+        "akinsho/bufferline.nvim",
+        tag = "v3.*",
+        requires = "nvim-tree/nvim-web-devicons"
+    }
+    use "moll/vim-bbye"
 
     -- Lualine
 
