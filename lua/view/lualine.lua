@@ -23,6 +23,7 @@ local mid_section = {
 		return "%="
 	end,
 }
+
 local hide_in_width = function()
 	return vim.fn.winwidth(0) > 80
 end
