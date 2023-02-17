@@ -17,7 +17,7 @@ bufferline.setup({
 
 		color_icons = true,
 		show_buffer_icons = true,
-		show_buffer_close_icons = true,
+		show_buffer_close_icons = false,
 
 		indicator = {
 			style = "none", -- "icon", "underline", "none"
@@ -32,7 +32,7 @@ bufferline.setup({
 
 		-- Diagnostics
 		diagnostics = "nvim_lsp", -- false, "nvim_lsp", "coc"
-		diagnostics_update_in_insert = true,
+		diagnostics_update_in_insert = false,
 		diagnostics_indicator = function(_, _, diagnostics_dict, _)
 			local key = "none"
 			for i, _ in pairs(diagnostics_dict) do

@@ -10,7 +10,7 @@ if not snip_status_ok then
     return
 end
 
-local lspkind_status_ok, lspkind = pcall(require, "lspkind")
+local lspkind_status_ok, _ = pcall(require, "lspkind")
 if not lspkind_status_ok then
     vim.notify("Error from lspkind!")
     return

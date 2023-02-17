@@ -8,6 +8,7 @@ require("user.telescope")
 require("view.colorscheme")
 require("view.nvim-tree")
 require("view.bufferline")
+require("view.lualine")
 
 require("lsp.cmp")
 require("lsp.mason")

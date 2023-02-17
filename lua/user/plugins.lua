@@ -55,7 +55,6 @@ return packer.startup(function(use)
     use "sainnhe/sonokai"
     use "Mofiqul/vscode.nvim"
 
-
     -- Completion
     use "hrsh7th/nvim-cmp"
     use "hrsh7th/cmp-buffer"
@@ -102,7 +101,7 @@ return packer.startup(function(use)
         requires = { "nvim-tree/nvim-web-devicons", }
     }
 
-    -- Buffer line
+    -- Bufferline
     use {
         "akinsho/bufferline.nvim",
         tag = "v3.*",
@@ -111,11 +110,15 @@ return packer.startup(function(use)
     use "moll/vim-bbye"
 
     -- Lualine
+    use {
+        "nvim-lualine/lualine.nvim",
+        requires = {"nvim-tree/nvim-web-devicons" , opt = true }
+    }
 
     -- Telescope
     use {
         "nvim-telescope/telescope.nvim", branch = "0.1.x",
-        requires = {"nvim-lua/plenary.nvim"},
+        requires = { "nvim-lua/plenary.nvim" },
     }
 
     -- Automatically set up your configuration after cloning packer.nvim
