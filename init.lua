@@ -4,6 +4,7 @@ require("user.plugins")
 require("user.treesitter")
 require("user.autopairs")
 require("user.telescope")
+require("user.gitsigns")
 
 require("view.colorscheme")
 require("view.nvim-tree")
