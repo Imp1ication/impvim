@@ -20,7 +20,6 @@ gitsigns.setup({
 		interval = 1000,
 		follow_files = true,
 	},
-
 	attach_to_untracked = true,
 	current_line_blame = false, -- Toggle with `:Gitsigns toggle_current_line_blame`
 	current_line_blame_opts = {
@@ -42,7 +41,5 @@ gitsigns.setup({
 		row = 0,
 		col = 1,
 	},
-	yadm = {
-		enable = false,
-	},
+	yadm = { enable = false, },
 })
