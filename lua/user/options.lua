@@ -43,6 +43,7 @@ local options = {
     cmdheight = 2,
     pumheight = 10,             -- pop up menu heaght
     showmode = false,           -- with powerline, we don't need to show things like -- INSERT -- anymore
+    -- laststatus = 2,          -- allways show status line
     splitbelow = true,          -- split horizontal widow to the below
     splitright = true,          -- split vertical widow to the right
     termguicolors = true,

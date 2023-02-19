@@ -3,10 +3,9 @@ if not status_ok then
 	vim.notify("Error from lualine")
 	return
 end
-
 local colors = {
-	bg = "#202328",
-	fg = "#bbc2cf",
+	black = "#202328",
+	white = "#bbc2cf",
 	yellow = "#ECBE7B",
 	cyan = "#008080",
 	darkblue = "#081633",
@@ -15,7 +14,7 @@ local colors = {
 	violet = "#a9a1e1",
 	magenta = "#c678dd",
 	blue = "#51afef",
-	red = "#ec5f67",
+	red = "#fb4934",
 }
 
 local mid_section = {
@@ -45,7 +44,7 @@ local filename = {
 		unnamed = "[No Name]",
 		newfile = "[New]",
 	},
-	color = { fg = colors.fg, gui = "bold" },
+	color = { fg = colors.white, gui = "bold" },
 }
 
 local location = {
@@ -143,13 +142,16 @@ lualine.setup({
 	inactive_sections = {
 		lualine_a = {},
 		lualine_b = {},
-		lualine_c = {},
-		lualine_x = {},
+		lualine_c = { filename, mid_section, lsp_server },
+		lualine_x = { branch },
 		lualine_y = {},
 		lualine_z = {},
 	},
 	tabline = {},
 	winbar = {},
 	inactive_winbar = {},
-	extensions = {},
+	extensions = {
+        "nvim-tree",
+        "toggleterm",
+    },
 })
