@@ -74,6 +74,11 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["ChatGPT.nvim"] = {
+    loaded = true,
+    path = "/home/implication/.local/share/nvim/site/pack/packer/start/ChatGPT.nvim",
+    url = "https://github.com/jackMort/ChatGPT.nvim"
+  },
   ["Comment.nvim"] = {
     loaded = true,
     path = "/home/implication/.local/share/nvim/site/pack/packer/start/Comment.nvim",
@@ -164,6 +169,11 @@ _G.packer_plugins = {
     path = "/home/implication/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
+  ["nui.nvim"] = {
+    loaded = true,
+    path = "/home/implication/.local/share/nvim/site/pack/packer/start/nui.nvim",
+    url = "https://github.com/MunifTanjim/nui.nvim"
+  },
   ["null-ls.nvim"] = {
     loaded = true,
     path = "/home/implication/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
@@ -235,6 +245,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/implication/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
+  ["toggleterm.nvim"] = {
+    loaded = true,
+    path = "/home/implication/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
+    url = "https://github.com/akinsho/toggleterm.nvim"
   },
   ["tokyonight.nvim"] = {
     loaded = true,

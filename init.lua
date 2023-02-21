@@ -5,6 +5,7 @@ require("user.treesitter")
 require("user.autopairs")
 require("user.telescope")
 require("user.gitsigns")
+require("user.toggleterm")
 
 require("view.colorscheme")
 require("view.nvim-tree")
@@ -17,3 +18,6 @@ require("lsp.lspconfig")
 require("lsp.lspsaga")
 require("lsp.null-ls")
 require("user.comment")
+
+--require("user.chatgpt")
+

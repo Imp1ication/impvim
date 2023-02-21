@@ -1,5 +1,4 @@
 local options = {
-    -- system related --
     fileencoding = "utf-8",     -- encoding
     clipboard = "unnamedplus",  -- allows nvim to access the OS clipboard
     mouse = "a",                -- enabled mouse
