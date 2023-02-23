@@ -1,7 +1,6 @@
 local lspconfig_status_ok, lspconfig = pcall(require, "lspconfig")
 if not lspconfig_status_ok then
     vim.notify("Error from lspconfig!")
-    return
 end
 
 local cmp_nvim_lsp_status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
@@ -40,7 +39,7 @@ vim.diagnostic.config(config)
 -- Keybinds for available lsp server --
 local keymap = vim.keymap
 
-local on_attach = function(_, bufnr)
+local on_attach = function(client, bufnr)
     local opts = { noremap = true, silent = true, buffer = bufnr }
     -- set keybinds
     keymap.set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
@@ -59,6 +58,9 @@ local on_attach = function(_, bufnr)
     keymap.set("n", "<leader>rn", "<cmd>Lspsaga rename<CR>", opts)
 
     -- specific server keymaps
+    if client.name == "jdtls" then
+        require("lsp.settings.jdtls")
+    end
     --[[
     if client.name == "sumneko_lua" then
     end
@@ -95,6 +97,12 @@ lspconfig["clangd"].setup({
     capabilities = capabilities,
     on_attach = on_attach,
 })
+
+lspconfig["jdtls"].setup({
+    capabilities = capabilities,
+    on_attach = on_attach,
+})
+
 --[[
 lspconfig["gopls"].setup({
     capabilities = capabilities,

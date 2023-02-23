@@ -25,7 +25,7 @@ nvim_tree.setup({
 
 		adaptive_size = true,
 		width = {
-			min = 20,
+			min = 25,
 			max = 35,
 		},
 

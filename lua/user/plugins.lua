@@ -16,7 +16,6 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 
 -- Autocommand that reloads neovim whenever you save the plugins.lua file
-
 vim.cmd([[
   augroup packer_user_config
     autocmd!
@@ -72,9 +71,10 @@ return packer.startup(function(use)
 	use("williamboman/mason.nvim")
 	use("williamboman/mason-lspconfig.nvim")
 	use("neovim/nvim-lspconfig")
-	use({ "glepnir/lspsaga.nvim", branch = "main" })
-
+	use({ "glepnir/lspsaga.nvim", branch = "main"})
 	use("hrsh7th/cmp-nvim-lsp")
+
+    use("mfussenegger/nvim-jdtls")
 
 	-- Treesitter
 	use({
@@ -128,15 +128,25 @@ return packer.startup(function(use)
 	-- Toggleterm
 	use({ "akinsho/toggleterm.nvim", tag = "*" })
 
+    -- Copilot
+    use({ "zbirenbaum/copilot.lua" })
+    use({
+        "zbirenbaum/copilot-cmp",
+        after = { "copilot.lua" },
+        config = function()
+            require("copilot_cmp").setup()
+        end,
+    })
+
 	-- ChatGPT
-	use({
+	--[[ use({
 		"jackMort/ChatGPT.nvim",
 		requires = {
 			"MunifTanjim/nui.nvim",
 			"nvim-lua/plenary.nvim",
 			"nvim-telescope/telescope.nvim",
 		},
-	})
+	}) ]]
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if PACKER_BOOTSTRAP then
