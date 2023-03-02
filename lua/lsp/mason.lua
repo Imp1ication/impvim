@@ -60,6 +60,7 @@ mason_lspconfig.setup({
         "lua_ls",
         "jsonls",
         "clangd",
+        "pyright",
     },
     automatic_installation = true, -- auto-install configured servers with lspconfig
 })
