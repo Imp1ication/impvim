@@ -41,7 +41,7 @@ keymap("n", "<C-l>", "<C-w>l", opts)
 keymap("n", "<C-Up>", ":resize -2<Cr>", opts)
 keymap("n", "<C-Down>", ":resize +2<Cr>", opts)
 keymap("n", "<C-Left>", ":vertical resize -2<Cr>", opts)
-keymap("n", "<C- Right>", ":vertical resize -2<Cr>", opts)
+keymap("n", "<C-Right>", ":vertical resize -2<Cr>", opts)
 
 -- Add empty line without get into Insert mode 
 keymap("n", "<Cr>", "o<Esc>k", opts)
