@@ -1,5 +1,5 @@
 -- Default colorscheme --
-local colorscheme = "tokyonight"
+local colorscheme = "sonokai"
 
 -- Protected call --
 local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
