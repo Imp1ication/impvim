@@ -18,8 +18,10 @@ vim.opt.numberwidth = 2
 vim.opt.signcolumn = "auto"
 
 -- tab and indentation --
-vim.opt.tabstop = 4
+vim.opt.tabstop = 8
+vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
+vim.opt.smarttab = false
 vim.opt.expandtab = true -- expand tab to spaces
 vim.opt.autoindent = true -- copy indent from current line when starting a new line
 vim.opt.smartindent = true -- make above smarter
