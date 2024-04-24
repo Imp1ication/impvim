@@ -4,7 +4,7 @@ vim.opt.termguicolors = true
 vim.opt.clipboard = "unnamedplus" -- allows nvim to access the os clipboard
 vim.opt.mouse = "a" -- enabled mouse, "a" for all modes, and "niv" for normal, insert, visual mode
 vim.opt.timeoutlen = 500 -- time in milliseconds to wait for a mapped sequence to complete
-vim.opt.virtualedit = ""
+vim.opt.virtualedit = "block"
 vim.opt.iskeyword:append("-") -- consider string-string as whole word
 
 -- backup --
@@ -15,10 +15,10 @@ vim.opt.undofile = true -- enable persistent undo
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.numberwidth = 2
-vim.opt.signcolumn = "auto"
+vim.opt.signcolumn = "yes"
 
 -- tab and indentation --
-vim.opt.tabstop = 8
+vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.smarttab = false
@@ -27,7 +27,7 @@ vim.opt.autoindent = true -- copy indent from current line when starting a new l
 vim.opt.smartindent = true -- make above smarter
 
 -- wrap and scrolloff --
-vim.opt.wrap = true -- line wrapping
+vim.opt.wrap = false -- line wrapping
 vim.opt.scrolloff = 5 -- minimal number of screen lines to keep above and below the cursor
 vim.opt.sidescrolloff = 10
 
