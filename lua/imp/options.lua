@@ -28,7 +28,7 @@ vim.opt.smartindent = true -- make above smarter
 
 -- wrap and scrolloff --
 vim.opt.wrap = false -- line wrapping
-vim.opt.scrolloff = 5 -- minimal number of screen lines to keep above and below the cursor
+vim.opt.scrolloff = 7 -- minimal number of screen lines to keep above and below the cursor
 vim.opt.sidescrolloff = 10
 
 -- search --
