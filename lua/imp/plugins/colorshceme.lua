@@ -1,4 +1,4 @@
-local colorscheme = "night-owl"
+local colorscheme = "kanagawa"
 
 return {
    	{
@@ -10,23 +10,21 @@ return {
 				style = "night", -- "storm", "moon", "night", "day"
 			})
 
-			-- vim.cmd("colorscheme tokyonight")
+            vim.cmd.colorscheme(colorscheme)
 		end,
 	}, 
 	{
 		"rebelot/kanagawa.nvim",
 		lazy = false,
 		priority = 1000,
-		config = function()
+        config = function()
 			require("kanagawa").setup({
-				background = {
-					dark = "wave", -- "wave", "dragon", "lotus"
+                background = {
+                    dark = "wave", -- "wave", "dragon", "lotus"
                     light = "lotus",
-				},
+                }
 			})
-
-            vim.cmd.colorscheme(colorscheme)
-		end,
+        end,
 	},
     {
 		"sainnhe/sonokai",
@@ -39,10 +37,12 @@ return {
     },
     { 
         "ellisonleao/gruvbox.nvim",
+		lazy = false,
         priority = 1000,
     },
     { 
         "oxfist/night-owl.nvim",
+		lazy = false,
         priority = 1000,
     }
 }

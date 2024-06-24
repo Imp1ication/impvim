@@ -58,3 +58,4 @@ keymap("v", "K", ":m '<-2<CR>gv=gv", opts)
 
 -- Keep paste buffer after paste
 keymap("v", "p", '"_dP', opts)
+keymap("v", "<leader>p", "p", opts)
