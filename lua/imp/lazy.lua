@@ -13,18 +13,18 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup(
-    { {import = "imp.plugins"} }, 
-    {
-        checker = {
-            enabled = true,
-            notify = false,
-        },
-        change_detection = {
-            enabled = true,
-            notify = false,
-        },
-        ui = {
-            border = "rounded",
-        }
-    }
+{ {import = "imp.plugins"} }, 
+{
+  checker = {
+    enabled = true,
+    notify = false,
+  },
+  change_detection = {
+    enabled = true,
+    notify = false,
+  },
+  ui = {
+    border = "rounded",
+  }
+}
 )
